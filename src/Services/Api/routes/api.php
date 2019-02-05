@@ -11,11 +11,15 @@
 |
 */
 
-// Prefix: /api/api
-Route::group(['prefix' => 'api'], function() {
+// Prefix: /api/product
+Route::group(['prefix' => 'product'], function() {
 
     // The controllers live in src/Services/Api/Http/Controllers
     // Route::get('/', 'UserController@index');
+	Route::get('/test', function(){
+		dd('Checking');
+	});
+	Route::get('/reviews', 'ReviewController@index');
 
     Route::get('/', function() {
         return response()->json(['path' => '/api/api']);
