@@ -7,11 +7,20 @@ use App\Services\Api\Features\GetReviewsFeature;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+	/**
+	 * @SWG\Get(
+	 *     path="/api/product/reviews",
+	 *     description="Return product reviews.",
+	 *     @SWG\Response(
+	 *         response=200,
+	 *         description="OK",
+	 *     ),
+	 *     @SWG\Response(
+	 *         response=422,
+	 *         description="Missing Data"
+	 *     )
+	 * )
+	 */
     public function index()
     {
         return $this->serve(GetReviewsFeature::class);
